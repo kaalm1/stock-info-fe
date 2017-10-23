@@ -6,7 +6,7 @@ export default class Stock extends React.Component {
     let stock = this.props.stock
     return(
       <Table.Row>
-        {stock.map(x=><Table.Cell>{x}</Table.Cell>)}
+        {Object.values(stock).map(x=><Table.Cell>{x}</Table.Cell>)}
       </Table.Row>
     )
   }

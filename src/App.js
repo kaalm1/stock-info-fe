@@ -14,16 +14,13 @@ class App extends Component {
   componentDidMount(){
     fetch(`http://localhost:3000/favorites`)
     .then(res=>res.json())
-    .then(data=>this.setState({stocks: data}))
+    .then(data=>this.setState({stocks: data, headers:Object.keys(data[0])}))
     .catch(()=>console.log('no api'))
 
-    fetch(`http://localhost:3000/headers`)
-    .then(res=>res.json())
-    .then(data=>this.setState({headers: data.headers}))
-    .catch(()=>console.log('no api'))
   }
 
   render() {
+    console.log(this.state)
     return (
       <Container>
         <Table celled striped>
